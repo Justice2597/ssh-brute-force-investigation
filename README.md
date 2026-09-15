@@ -56,6 +56,23 @@ source="tutorialdata.zip:*" sourcetype="secure-2" "Failed password" "87.194.216.
 - **operator** received **923 attempts**.
 - Repeated attempts against common privileged usernames are consistent with automated password-guessing/brute-force behavior in this training dataset.
 
+## MITRE ATT&CK Mapping
+
+The observed SSH brute-force activity aligns with the following MITRE ATT&CK techniques:
+
+- **T1110 – Brute Force:** Repeated authentication attempts against SSH accounts are consistent with password-guessing activity.
+- **T1110.001 – Password Guessing:** Multiple commonly used and privileged usernames, including `root`, `administrator`, and `admin`, were repeatedly targeted.
+- **T1078 – Valid Accounts:** Successful authentication events should be investigated to determine whether credentials obtained through password guessing were subsequently used for unauthorized access.
+
+### Detection Approach
+Splunk was used to identify indicators associated with brute-force activity by analyzing:
+- High volumes of failed SSH authentication attempts
+- Repeated attempts originating from the same source IP addresses
+- Frequently targeted privileged usernames
+- Source IP and username combinations
+- Authentication results and activity over time
+
+
 ## Investigation Dashboard
 The Splunk dashboard below summarizes the SSH brute-force investigation, including attacking IP addresses, targeted usernames, high-risk sources, and authentication results.
 
