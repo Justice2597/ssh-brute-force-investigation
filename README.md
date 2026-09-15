@@ -56,8 +56,10 @@ source="tutorialdata.zip:*" sourcetype="secure-2" "Failed password" "87.194.216.
 - **operator** received **923 attempts**.
 - Repeated attempts against common privileged usernames are consistent with automated password-guessing/brute-force behavior in this training dataset.
 
-## Dashboard
-The final Splunk dashboard, **SSH Brute Force Investigation**, was designed to give an analyst a quick view of failed-login activity. It includes an attack timeline, top attacking IP addresses, targeted usernames, and supporting authentication analysis.
+## Investigation Dashboard
+The Splunk dashboard below summarizes the SSH brute-force investigation, including attacking IP addresses, targeted usernames, high-risk sources, and authentication results.
+
+![SSH Brute Force Investigation Dashboard](ssh-brute-force.jpg)
 
 > Screenshots in this repository are from a training/lab environment and do not represent a production incident.
 
@@ -71,6 +73,7 @@ This project demonstrates my ability to move from raw security events to an anal
 ```text
 ssh-brute-force-investigation/
 ├── README.md
+├── ssh-brute-force.jpg
 ├── spl/
 │   └── investigation-queries.md
 └── documentation/
